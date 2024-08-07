@@ -1,0 +1,110 @@
+import React, { useState } from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import { TextInput, Button } from 'react-native-paper';
+
+export default function App() {
+  // Estado para controlar la visibilidad de la contraseña
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Image source={require('./icono.png')} style={styles.icon} />
+        <Text style={styles.headerText}>Turismo App</Text>
+      </View>
+      <View style={styles.content}>
+        <Text style={styles.welcomeText}>Explora el Mundo con Nosotros</Text>
+        
+        <TextInput 
+          style={styles.input} 
+          label="Correo Electrónico" 
+          placeholder="Correo Electrónico"
+          placeholderTextColor="#ccc"
+          keyboardType="email-address"
+        />
+        <TextInput 
+          style={styles.input} 
+          label="Contraseña" 
+          placeholder="Contraseña"
+          placeholderTextColor="#ccc"
+          secureTextEntry={!passwordVisible}
+          right={
+            <TextInput.Icon
+              icon={passwordVisible ? "eye" : "eye-off"}
+              onPress={() => setPasswordVisible(!passwordVisible)}
+            />
+          }
+        />
+        
+        <Button mode="contained" style={styles.button}>
+          Iniciar Sesión
+        </Button>
+
+        <Button mode="contained" style={[styles.button, styles.registerButton]}>
+          Registrarse
+        </Button>
+      </View>
+      <StatusBar style="light" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  header: {
+    backgroundColor: '#4B4B4B',
+    padding: 20,
+    paddingVertical: 40,
+    width: '100%',
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  icon: {
+    width: 50,
+    height: 50,
+    marginRight: 10,
+  },
+  headerText: {
+    color: '#fff',
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  content: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+    paddingTop: 40,
+  },
+  welcomeText: {
+    fontSize: 26,
+    color: '#038C5A',
+    fontWeight: 'bold',
+    marginBottom: 30,
+    textAlign: 'center',
+    paddingHorizontal: 10,
+    textShadowColor: 'gray',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 5,
+  },
+  input: {
+    width: '80%',
+    marginBottom: 15,
+  },
+  button: {
+    backgroundColor: '#038C5A',
+    padding: 15,
+    borderRadius: 10,
+    width: '80%',
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  registerButton: {
+    backgroundColor: '#8BF167',
+    marginTop: 10,
+  },
+});
