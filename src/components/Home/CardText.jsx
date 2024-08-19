@@ -30,7 +30,7 @@ function CardText() {
 const styles = StyleSheet.create({
   textCard: {
     width: '88%',
-    height: height * 0.28,
+    height: height * 0.20,
     marginHorizontal: 'auto',
     marginTop: 20,
     padding: 10,

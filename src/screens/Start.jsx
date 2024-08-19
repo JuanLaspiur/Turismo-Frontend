@@ -27,7 +27,7 @@ function Start() {
       
       {/* Botón en la parte inferior */}
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-        <Text style={styles.buttonText}>Get Started <Text style={styles.arrow}>→</Text></Text>
+        <Text style={styles.buttonText} >Get Started <Text style={styles.arrow}>→</Text></Text>
       </TouchableOpacity>
     </View>
   );
