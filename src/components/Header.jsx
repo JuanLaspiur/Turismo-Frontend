@@ -3,11 +3,13 @@ import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useFonts, Roboto_400Regular } from '@expo-google-fonts/roboto';
 import { ActivityIndicator } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 function Header({ name }) {
   const [fontsLoaded] = useFonts({
     Roboto_400Regular,
   });
+  const navigation = useNavigation();
 
   const [backgroundColor, setBackgroundColor] = useState('rgba(195, 195, 195, 0.5)');
 
@@ -17,6 +19,7 @@ function Header({ name }) {
 
   const handlePress = () => {
     setBackgroundColor('white');
+
   };
 
   return (
@@ -27,6 +30,7 @@ function Header({ name }) {
           style={[styles.icon, { backgroundColor: backgroundColor, padding: 10, borderRadius: 50 }]}
           size={24}
           color="black"
+          onPress={()=>{navigation.navigate('Start')}}
         />
       </TouchableOpacity>
       <Text style={styles.text}>{name}</Text>
