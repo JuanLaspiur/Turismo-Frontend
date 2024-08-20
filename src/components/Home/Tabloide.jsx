@@ -6,7 +6,7 @@ function Tabloide() {
   return (
     <Swiper style={styles.wrapper}
       autoplay={true}
-      autoplayTimeout={5}
+      autoplayTimeout={8}
           dotColor="rgba(128, 128, 128, 0.0)"
       activeDotColor="rgba(128, 128, 128, 0.0)"
     >
@@ -14,7 +14,7 @@ function Tabloide() {
         <Image style={styles.tabloideImg} source={require('../../../assets/images (1).jpeg')} />
       </View>
       <View style={styles.tabloide}>
-        <Image style={styles.tabloideImg} source={require('../../../assets/images (1).jpeg')} />
+        <Image style={styles.tabloideImg} source={require('../../../assets/favicon.png')} />
       </View>
       <View style={styles.tabloide}>
         <Image style={styles.tabloideImg} source={require('../../../assets/images (1).jpeg')} />
@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
   tabloide: {
     width: '92%',
     height: 170,
-    backgroundColor: 'red',
     marginTop: 29,
     marginHorizontal: 'auto',
     borderRadius: 20,

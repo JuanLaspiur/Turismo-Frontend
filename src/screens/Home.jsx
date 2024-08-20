@@ -10,6 +10,7 @@ function Home() {
       <Tabloide />
       <Cities />
       <DestinosCarrucell />
+      <Tabloide />
     </ScrollView>
   );
 }
@@ -19,5 +20,6 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:'rgba(37, 179, 173, 0.03)'
   },
 });
