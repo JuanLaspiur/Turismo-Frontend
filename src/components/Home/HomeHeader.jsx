@@ -5,13 +5,13 @@ import { useFonts, Roboto_400Regular } from '@expo-google-fonts/roboto';
 import { ActivityIndicator } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-function Header({ name }) {
+function HomeHeader({ name }) {
   const [fontsLoaded] = useFonts({
     Roboto_400Regular,
   });
   const navigation = useNavigation();
-
-  const [backgroundColor, setBackgroundColor] = useState('rgba(195, 195, 195, 0.5)');
+  
+  const [backgroundColor, setBackgroundColor] = useState('rgba(37, 179, 173, 0.1)');
 
   if (!fontsLoaded) {
     return <ActivityIndicator style={styles.loader} size="large" color="#000000" />;
@@ -19,18 +19,17 @@ function Header({ name }) {
 
   const handlePress = () => {
     setBackgroundColor('white');
-
   };
 
   return (
     <View style={styles.header}>
       <TouchableOpacity onPress={handlePress}>
         <Ionicons
-          name="chevron-back"
-          style={[styles.icon, { backgroundColor: backgroundColor, padding: 10, borderRadius: 50 }]}
+          name="person-circle-outline"
+          style={[styles.icon, { backgroundColor: backgroundColor, padding: 7, borderRadius: 50 }]}
           size={24}
           color="black"
-          onPress={()=>{navigation.navigate('Home')}}
+          onPress={() => { alert('Loguear') }}
         />
       </TouchableOpacity>
       <Text style={styles.text}>{name}</Text>
@@ -41,7 +40,7 @@ function Header({ name }) {
 const styles = StyleSheet.create({
   header: {
     height: 70,
-    marginTop:5,
+    marginTop: 5,
     paddingTop: 45,
     width: '100%',
     flexDirection: 'row',
@@ -49,13 +48,14 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: 'absolute',
-    top:-18,
-    left: 10,
+    color: 'rgba(37, 179, 173, 0.8)',
+    top: -18,
+    left: 300,
   },
   text: {
     fontFamily: 'Roboto_400Regular',
     fontSize: 22,
-    color: 'black',
+    color: 'gray',
     fontWeight: '700',
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -68,4 +68,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Header;
+export default HomeHeader;
+

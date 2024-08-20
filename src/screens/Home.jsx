@@ -3,10 +3,11 @@ import { StyleSheet, ScrollView } from "react-native";
 import Tabloide from "../components/Home/Tabloide";
 import Cities from "../components/Home/Cities";
 import DestinosCarrucell from "../components/Home/DestinosCarrucell";
-
+import HomeHeader from '../components/Home/HomeHeader'
 function Home() {
   return (
     <ScrollView style={styles.container}>
+      <HomeHeader name={'Travel app'}/>
       <Tabloide />
       <Cities />
       <DestinosCarrucell />

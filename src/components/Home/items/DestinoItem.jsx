@@ -2,18 +2,20 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity } from "react-native";
 import { useFonts, Roboto_400Regular } from "@expo-google-fonts/roboto";
+import { useNavigation } from '@react-navigation/native';
 
 function DestinoItem({ name, imageSource, onPress }) {
   const [fontsLoaded] = useFonts({
     Roboto_400Regular,
   });
+  const navigation = useNavigation();
   const screenWidth = Dimensions.get("window").width;
   const itemWidthDestino = screenWidth < 400 ? screenWidth * 0.3 : 75;
 
   if (!fontsLoaded) return null;
 
   return (
-    <TouchableOpacity style={[styles.destinosItem, { width: itemWidthDestino }]} onPress={onPress}>
+    <TouchableOpacity style={[styles.destinosItem, { width: itemWidthDestino }]} onPress={()=>{ navigation.navigate('Destino')}}>
       <Image source={imageSource} style={styles.destinosItemImg} />
       <Text style={styles.destinosItemText}>{name}</Text>
     </TouchableOpacity>
