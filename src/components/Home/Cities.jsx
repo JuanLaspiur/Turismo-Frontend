@@ -21,10 +21,10 @@ function Cities() {
                dotColor="rgba(128, 128, 128, 0.0)"
       activeDotColor="rgba(128, 128, 128, 0.0)"
             prevButton={
-                <FontAwesome name="chevron-left" size={15} color="gray" style={styles.arrow} />
+                <FontAwesome name="chevron-left" size={12} color='rgba(128, 128, 128, 0.5)' style={styles.arrow} />
             }
             nextButton={
-                <FontAwesome name="chevron-right" size={15} color="gray" style={styles.arrow} />
+                <FontAwesome name="chevron-right" size={12} color='rgba(128, 128, 128, 0.5)' style={styles.arrow} />
             }
         >
             <View style={styles.cities}>
