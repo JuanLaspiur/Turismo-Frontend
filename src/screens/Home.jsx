@@ -1,45 +1,28 @@
 import React from "react";
-import { StyleSheet, View, ActivityIndicator } from "react-native";
+import { StyleSheet, ScrollView, View, Text, Image } from "react-native";
+import Tabloide from "../components/Home/Tabloide";
 import { useFonts, Roboto_400Regular } from "@expo-google-fonts/roboto";
-import Header from "../components/Header";
-import ImagesContainer from "../components/Home/ImagesContainer";
-import CardText from "../components/Home/CardText";
-import ItemOptioms from "../components/Home/ItemOptioms";
-import ButtomContainer from "../components/Home/ButtomContainer";
+import Cities from "../components/Home/Cities";
 
 function Home() {
-  const [fontsLoaded] = useFonts({
-    Roboto_400Regular,
-  });
-
-  if (!fontsLoaded) {
-    return (
-      <ActivityIndicator style={styles.loader} size="large" color="#000000" />
-    );
-  }
-
+    const [fontsLoaded] = useFonts({
+        Roboto_400Regular,
+      });
+    
   return (
-    <View style={styles.container}>
-      <Header name={"People Like"} />
-      <ImagesContainer name={"Imagen nombre"} lugar={"lugar, país"} />
-      <CardText />
-      <ItemOptioms distance={"2.3 KM"} temperature={"17 °C"} value={"4.5"} />
-      <ButtomContainer />
-    </View>
+    <ScrollView style={styles.container}>
+      <Tabloide />
+      <Cities />
+        </ScrollView>
   );
 }
+
+export default Home;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
-  },
-  loader: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "white",
-  },
+   // backgroundColor: "white",
+  }
 });
 
-export default Home;

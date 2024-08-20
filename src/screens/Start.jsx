@@ -24,8 +24,6 @@ function Start() {
         <Text style={styles.textBlack}>Inspiré.</Text>
         <Text style={styles.textBlackSmall}>Life is about jornaly.</Text>
       </View>
-      
-      {/* Botón en la parte inferior */}
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
         <Text style={styles.buttonText} >Get Started <Text style={styles.arrow}>→</Text></Text>
       </TouchableOpacity>
