@@ -13,9 +13,6 @@ function HomeHeader({ name }) {
   
   const [backgroundColor, setBackgroundColor] = useState('rgba(37, 179, 173, 0.1)');
 
-  if (!fontsLoaded) {
-    return <ActivityIndicator style={styles.loader} size="large" color="#000000" />;
-  }
 
   const handlePress = () => {
     setBackgroundColor('white');

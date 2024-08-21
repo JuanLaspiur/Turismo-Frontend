@@ -13,7 +13,6 @@ function Cities() {
   const screenWidth = Dimensions.get('window').width;
   const itemWidth = screenWidth < 400 ? screenWidth * 0.2 : 75;
 
-  if (!fontsLoaded) return null;
 
   return (
     <>

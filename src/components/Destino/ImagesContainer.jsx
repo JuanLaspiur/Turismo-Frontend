@@ -10,9 +10,6 @@ function ImagesContainer({name, lugar}) {
     Roboto_400Regular,
   });
 
-  if (!fontsLoaded) {
-    return <ActivityIndicator style={styles.loader} size="large" color="#000000" />;
-  }
 
   return (
     <View style={styles.imagesContainer}>
